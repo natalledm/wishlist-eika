@@ -1,32 +1,12 @@
-import { useState } from 'react';
 import './App.css';
-import CreateItemForm from './Components/CreateItemForm/CreateItemForm';
-import ShoppingList from './Components/ShoppingList/ShoppingList';
+import ShoppingListPage from './Components/ShoppingListPage/ShoppingListPage';
 
 
-function App() {
-
-  const [id, setId] = useState(0)
-
-  const createItem = (name, price) => {
-    const item = {
-      name: name,
-      price: price,
-      isCompleted: false,
-      id: id,
-    };
-    setId(id+1);
-    setItems([...items, item]);
-  };
-
-  const [items, setItems] = useState([]);
+export default function App() {
 
   return (
     <div className="App">
-      <CreateItemForm createItem={createItem}/>
-      <ShoppingList items={items} />
+      <ShoppingListPage />
     </div>
   );
 }
-
-export default App;
