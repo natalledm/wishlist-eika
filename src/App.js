@@ -1,23 +1,30 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import CreateItemForm from './Components/CreateItemForm/CreateItemForm';
+import ShoppingList from './Components/ShoppingList/ShoppingList';
+
 
 function App() {
+
+  const [id, setId] = useState(0)
+
+  const createItem = (name, price) => {
+    const item = {
+      name: name,
+      price: price,
+      isCompleted: false,
+      id: id,
+    };
+    setId(id+1);
+    setItems([...items, item]);
+  };
+
+  const [items, setItems] = useState([]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <CreateItemForm createItem={createItem}/>
+      <ShoppingList items={items} />
     </div>
   );
 }
