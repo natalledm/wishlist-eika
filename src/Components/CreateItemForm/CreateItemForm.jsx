@@ -4,7 +4,11 @@ export default function CreateItemForm(props) {
   
   const submitItemHandler = e => {
     e.preventDefault();
-    props.createItem(name, price);
+    if(name.length === 0 || price === '' ) {
+      console.log("enter valid name and number")
+    } else {
+      props.createItem(name, price);
+    }
     setName('');
     setPrice('');
   }
