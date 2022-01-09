@@ -1,0 +1,35 @@
+.bought-list-container {
+  width: 80%;
+  margin-top: 3%;
+  align-self: center;
+  padding: 0 4rem 1rem 4rem;
+  background-color: var(--white);
+  border: 1px solid rgba(0, 0, 0, 0.63);
+  box-shadow: 10px 10px var(--yellow);
+}
+
+.bought-list-toggle-container {
+  align-self: center;
+  margin-top: 1rem;
+}
+
+.bought-list-toggle {
+  font-family: "NotoSansBold", sans-serif;
+  text-decoration: none;
+  color: black;
+}
+
+.bought-item {
+  padding: 2rem 0 2rem 2rem;
+  list-style: square inside;
+  text-decoration:line-through rgba(0, 0, 0, 0.603);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.37);
+}
+
+.shop-list-item-name {
+  padding-left: 1rem;
+}
+
+.shop-list-item-price {
+  padding-left: 2rem;
+}

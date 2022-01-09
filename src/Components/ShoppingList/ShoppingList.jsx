@@ -1,10 +1,22 @@
 import React from 'react';
+import './shopping-list.css';
 
 export default function ShoppingList(props) {
   return (
-    <ul style={{ listStyle: "none" }}>
+    <section className='shop-list-container'>
+      <header>
+        <h2 className='shop-list-title'>ITEMS</h2>
+      </header>
+      <ul className='flex-column shop-list'>
 
-      {props.items.map((item) => <li key={item.id}> <input type="checkbox" value={props.checked} onChange={() => props.toggle(item)} /> {item.name} {item.price}:-</li>)}
-    </ul>
+        {props.items.map((item) =>
+          <li className='shop-list-item' key={item.id}> 
+            <span>
+              <input type="checkbox" value={props.checked} onChange={() => props.toggle(item)} /> 
+            </span>
+            <span className='shop-list-item-name'>{item.name}</span><span className='shop-list-item-price'>{item.price}:-</span>
+          </li>)}
+      </ul>
+    </section>
   );
 }

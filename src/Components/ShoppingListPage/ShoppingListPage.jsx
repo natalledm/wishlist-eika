@@ -1,6 +1,8 @@
 import { useState } from 'react';
+import CompletedList from '../CompletedList/CompletedList';
 import CreateItemForm from '../CreateItemForm/CreateItemForm';
 import ShoppingList from '../ShoppingList/ShoppingList';
+import './shopping-list-page.css';
 
 
 export default function ShoppingListPage() {
@@ -38,9 +40,18 @@ export default function ShoppingListPage() {
   }
 
   return (
-    <>
-      <CreateItemForm createItem={createItem} />
-      <ShoppingList items={items.filter((item) => !item.isCompleted)} toggle={toggleCompleted} />
-    </>
+    <main>
+      <header className='main-header'>
+        <h1 className='main-title'>SHOPPING LIST</h1>
+      </header>
+      <div className="flex-column">
+        <CreateItemForm createItem={createItem} />
+        <ShoppingList items={items.filter(item => !item.isCompleted)} toggle={toggleCompleted} />
+        <CompletedList items={items.filter(item => item.isCompleted)} />
+      </div>
+      <div className="footer-container">
+      <footer className="footer">Made with 💙 by Natalle</footer>
+    </div>
+    </main>
   );
 }

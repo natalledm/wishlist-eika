@@ -1,0 +1,25 @@
+.create-item-form {
+  justify-content: center;
+  align-self: center;
+}
+
+.create-item-form input {
+  inline-size: 12rem;
+  padding: 5px;
+  margin: 1rem;
+  background-color: var(--white);
+  font-size: 1.5rem;
+  border-radius: 8px;
+}
+
+.item-form-button-container {
+  align-self: center;
+}
+
+.item-form-button {
+  padding: 1rem;
+  background-color: var(--white);
+  font-size: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+}

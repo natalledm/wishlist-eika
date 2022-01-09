@@ -1,0 +1,32 @@
+.shop-list-title {
+  font-size: 2.5rem;
+  font-family: "NotoSansBold", sans-serif;
+  padding-top: 1rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.63);
+}
+
+.shop-list-container {
+  margin: auto;
+  margin-top: 3%;
+  inline-size: 100%;
+  max-width: 80%;
+  padding: 0 4rem 1rem 4rem;
+  background-color: var(--white);
+  border: 1px solid rgba(0, 0, 0, 0.63);
+  box-shadow: 10px 10px var(--yellow);
+}
+
+.shop-list-item {
+  padding: 2rem 0 2rem 2rem;
+  list-style: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.37);
+}
+
+.shop-list-item-name {
+  padding-left: 1rem;
+}
+
+.shop-list-item-price {
+  padding-left: 2rem;
+}
