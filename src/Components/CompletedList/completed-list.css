@@ -8,14 +8,10 @@
   box-shadow: 10px 10px var(--yellow);
 }
 
-.bought-list-toggle-container {
+.bought-list-title {
   align-self: center;
   margin-top: 1rem;
-}
-
-.bought-list-toggle {
   font-family: "NotoSansBold", sans-serif;
-  text-decoration: none;
   color: black;
 }
 

@@ -39,6 +39,17 @@ export default function ShoppingListPage() {
     setItems(newItems);
   }
 
+  const [isVisible, setVisibility] = useState(false);
+
+  const changeVisibility = () => {
+    if(isVisible) {
+      setVisibility(false);
+    } else {
+      setVisibility(true);
+    }
+  };
+
+
   return (
     <main>
       <header className='main-header'>
@@ -46,8 +57,8 @@ export default function ShoppingListPage() {
       </header>
       <div className="flex-column list-container">
         <CreateItemForm createItem={createItem} />
-        <ShoppingList items={items.filter(item => !item.isCompleted)} toggle={toggleCompleted} />
-        <CompletedList items={items.filter(item => item.isCompleted)} />
+        <ShoppingList items={items.filter(item => !item.isCompleted)} toggle={toggleCompleted} visibility={changeVisibility}/>
+        { isVisible ? <CompletedList items={items.filter(item => item.isCompleted)}/> : null }
       </div>
       <div className="footer-container">
       <footer className="footer">Made with 💙 by Natalle</footer>

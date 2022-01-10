@@ -31,3 +31,19 @@
 .shop-list-item-price {
   padding-left: 2rem;
 }
+
+.bought-items-button-container {
+  align-self: flex-end;
+  margin-top: 3%;
+  margin-right: 10%;
+}
+
+.bought-items-button {
+  border: none;
+  font-size: 1.4rem;
+  padding: 1rem;
+}
+
+.bought-items-button:hover {
+  font-weight: bold;
+}
