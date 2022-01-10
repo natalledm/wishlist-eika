@@ -44,7 +44,7 @@ export default function ShoppingListPage() {
       <header className='main-header'>
         <h1 className='main-title'>SHOPPING LIST</h1>
       </header>
-      <div className="flex-column">
+      <div className="flex-column list-container">
         <CreateItemForm createItem={createItem} />
         <ShoppingList items={items.filter(item => !item.isCompleted)} toggle={toggleCompleted} />
         <CompletedList items={items.filter(item => item.isCompleted)} />

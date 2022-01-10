@@ -5,21 +5,21 @@
 
 .create-item-form input {
   inline-size: 12rem;
-  padding: 5px;
+  padding: 1rem;
   margin: 1rem;
   background-color: var(--white);
   font-size: 1.5rem;
-  border-radius: 8px;
 }
 
-.item-form-button-container {
-  align-self: center;
+.create-item-form input:focus {
+  outline-color: var(--yellow);
+  
 }
 
 .item-form-button {
   padding: 1rem;
+  margin-left: 1rem;
   background-color: var(--white);
   font-size: 1.5rem;
-  border-radius: 8px;
   text-align: center;
 }

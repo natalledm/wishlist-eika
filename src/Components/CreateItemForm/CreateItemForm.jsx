@@ -39,8 +39,6 @@ export default function CreateItemForm(props) {
           value={price}
           onChange={inputPrice}
         />
-      </div>
-      <div className='item-form-button-container'>
         <button className='item-form-button' onClick={submitItemHandler}>Add item</button>
       </div>
     </form>

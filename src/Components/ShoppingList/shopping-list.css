@@ -7,9 +7,10 @@
 }
 
 .shop-list-container {
-  margin: auto;
+  align-self: center;
   margin-top: 3%;
   inline-size: 100%;
+  min-height: 40%;
   max-width: 80%;
   padding: 0 4rem 1rem 4rem;
   background-color: var(--white);
