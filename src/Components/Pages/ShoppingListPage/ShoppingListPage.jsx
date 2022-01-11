@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import CompletedList from '../CompletedList/CompletedList';
-import CreateItemForm from '../CreateItemForm/CreateItemForm';
-import ShoppingList from '../ShoppingList/ShoppingList';
+import CompletedList from '../../CompletedList/CompletedList';
+import CreateItemForm from '../../CreateItemForm/CreateItemForm';
+import ShoppingList from '../../ShoppingList/ShoppingList';
 import './shopping-list-page.css';
 
 

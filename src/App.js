@@ -1,7 +1,7 @@
 import './App.css';
 import { Routes, Route } from 'react-router'
-import ShoppingListPage from './Components/ShoppingListPage/ShoppingListPage';
-import WelcomeContent from './Components/InitialPage/InitialPage';
+import ShoppingListPage from './Components/Pages/ShoppingListPage/ShoppingListPage';
+import WelcomeContent from './Components/Pages/InitialPage/InitialPage';
 
 export default function App() {
   return (
