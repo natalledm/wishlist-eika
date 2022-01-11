@@ -1,4 +1,4 @@
-# Shopping List for EIKA!
+# Shopping List for EIKA
 
 To run (for now) use `npm start`.
 
