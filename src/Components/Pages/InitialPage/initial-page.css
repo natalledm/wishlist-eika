@@ -1,0 +1,38 @@
+.logo-img {
+  height: 60%;
+  width: 60%;
+  max-width: 400px;
+  max-height: 300px;
+  padding: 2rem;
+  align-self: center;
+}
+
+.welcome-title {
+  margin-top: 3%;
+  margin-bottom: 3%;
+  text-align: center;
+  color: var(--primary-blue);
+  text-shadow: 1px 1px var(--yellow);
+}
+
+.welcome-text-button-container {
+  margin-top: 3%;
+  min-width: 40%;
+  max-width: 90%;
+  align-self: center;
+}
+
+.welcome-text {
+  margin: 2rem;
+  text-align: center;
+}
+
+.list-page-button {
+  align-self: center;
+  max-width: 40%;
+  padding: 1rem;
+  background-color: var(--white);
+  font-size: 1.5rem;
+  text-align: center;
+}
+
