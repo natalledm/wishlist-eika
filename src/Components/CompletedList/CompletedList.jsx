@@ -1,7 +1,5 @@
 import React from 'react';
 import './completed-list.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons';
 
 export default function CompletedList(props) {
   return (
