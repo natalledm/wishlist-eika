@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import CompletedList from '../../CompletedList/CompletedList';
 import CreateItemForm from '../../CreateItemForm/CreateItemForm';
 import ShoppingList from '../../ShoppingList/ShoppingList';
@@ -7,7 +7,16 @@ import './shopping-list-page.css';
 
 export default function ShoppingListPage() {
 
-  const [id, setId] = useState(0);
+  const initialItemsString = localStorage.getItem("items");
+  const initialItems = initialItemsString === null ? [] : JSON.parse(initialItemsString);
+  
+  const [id, setId] = useState(initialItems.length);
+  
+  const [items, setItems] = useState(initialItems);
+  
+  useEffect( () => {
+    localStorage.setItem('items', JSON.stringify(items))
+  }, [items]);
 
   const createItem = (name, price) => {
     const item = {
@@ -19,8 +28,6 @@ export default function ShoppingListPage() {
     setId(id + 1);
     setItems([...items, item]);
   };
-
-  const [items, setItems] = useState([]);
 
   const toggleCompleted = (itemToToggle) => {
     const newItems = items.map(item => {
