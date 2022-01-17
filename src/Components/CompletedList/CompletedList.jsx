@@ -8,7 +8,7 @@ export default function CompletedList(props) {
       <ul className='bought-list'>
         {props.items.map((item) => <li className='bought-item' key={item.id}>
           <span>
-            <input type="checkbox" value={props.checked} onChange={() => props.toggle(item)} />
+            <input type="checkbox" value={props.checked} defaultChecked={item.isCompleted} onChange={() => props.toggle(item)} />
           </span>
           <span className='bought-item-name'>
           {item.name}
