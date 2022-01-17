@@ -61,7 +61,7 @@ export default function ShoppingListPage() {
     <div className="flex-column list-container">
       <CreateItemForm createItem={createItem} />
       <ShoppingList items={items.filter(item => !item.isCompleted)} toggle={toggleCompleted} visibility={changeVisibility} />
-      {isVisible ? <CompletedList items={items.filter(item => item.isCompleted)} /> : null}
+      {isVisible ? <CompletedList items={items.filter(item => item.isCompleted)} toggle={toggleCompleted} /> : null}
     </div>
   );
 }
