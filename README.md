@@ -14,7 +14,9 @@ It is hosted on Firebase, link to the right ->
 
 
 ------------------------------------------------------------------
+
 ### Future updates
+
 1. Delete item button
 2. Update error message for empty name/price (currently is just a console.log)
 3. Edit button
