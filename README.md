@@ -1,6 +1,7 @@
-# Shopping List for EIKA
+# Wishlist for EIKA
 
 To run locally use `npm start`.
+
 It is hosted on Firebase, link to the right ->
 
 ## Tech stack
@@ -11,6 +12,8 @@ It is hosted on Firebase, link to the right ->
 4. Firebase
 
 
+
+------------------------------------------------------------------
 ### Future updates
 1. Delete item button
 2. Update error message for empty name/price (currently is just a console.log)
