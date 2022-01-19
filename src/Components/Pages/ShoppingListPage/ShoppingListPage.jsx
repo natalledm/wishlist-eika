@@ -8,13 +8,25 @@ import './shopping-list-page.css';
 export default function ShoppingListPage() {
 
   const initialItemsString = localStorage.getItem("items");
+
   const initialItems = initialItemsString === null ? [] : JSON.parse(initialItemsString);
-  
-  const [id, setId] = useState(initialItems.length);
-  
+
   const [items, setItems] = useState(initialItems);
-  
-  useEffect( () => {
+
+  const highestId = (items) => {
+    let maxId = 0;
+    for (let i = 0; i < items.length; i++) {
+      if (items[i].id > maxId) {
+        maxId = items[i].id;
+      }
+    }
+    return maxId;
+  }
+
+  const [id, setId] = useState(highestId(initialItems) + 1);
+
+
+  useEffect(() => {
     localStorage.setItem('items', JSON.stringify(items))
   }, [items]);
 
@@ -56,12 +68,22 @@ export default function ShoppingListPage() {
     }
   };
 
+  const removeFromList = (itemToRemove) => {
+    const newArr = items.filter((item) => {
+      if (item.id === itemToRemove.id) {
+        return false;
+      } else {
+        return true;
+      }
+    })
+    setItems(newArr);
+  }
 
   return (
     <div className="flex-column list-container">
       <CreateItemForm createItem={createItem} />
-      <ShoppingList items={items.filter(item => !item.isCompleted)} toggle={toggleCompleted} visibility={changeVisibility} />
-      {isVisible ? <CompletedList items={items.filter(item => item.isCompleted)} toggle={toggleCompleted} /> : null}
+      <ShoppingList items={items.filter(item => !item.isCompleted)} toggle={toggleCompleted} visibility={changeVisibility} remove={removeFromList} />
+      {isVisible ? <CompletedList items={items.filter(item => item.isCompleted)} toggle={toggleCompleted} remove={removeFromList} /> : null}
     </div>
   );
 }

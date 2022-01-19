@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './shopping-list.css';
 
 export default function ShoppingList(props) {
@@ -16,6 +16,7 @@ export default function ShoppingList(props) {
                 <input type="checkbox" value={props.checked} defaultChecked={item.isCompleted} onChange={() => props.toggle(item)} />
               </span>
               <span className='shop-list-item-name'>{item.name}</span><span className='shop-list-item-price'>{item.price}:-</span>
+              <button onClick={() => props.remove(item)} >Delete</button>
             </li>)}
         </ul>
       </section>
