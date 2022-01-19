@@ -1,5 +1,5 @@
 .bought-list-container {
-  width: 80%;
+  width: 90%;
   margin-top: 3%;
   margin-bottom: 3%;
   align-self: center;
@@ -18,12 +18,29 @@
 }
 
 .bought-item {
-  padding: 2rem 0 2rem 2rem;
+  display: flex;
+  width: 100%;
+  padding: 2rem 0 2rem 0;
+  justify-content: space-around;
   list-style: none;
   text-decoration:line-through rgba(0, 0, 0, 0.603);
   border-bottom: 1px solid rgba(0, 0, 0, 0.37);
 }
 
+.bought-item-properties {
+  flex-grow: 2;
+  margin-left: 2rem;
+}
+
 .bought-item-name {
-  padding: 0 2rem 0 2rem;
+  padding: 0 1rem 0 2rem;
+}
+
+.delete-item-container-completed {
+  flex-grow: 1;
+}
+
+.delete-item-button {
+  padding: 0.3rem;
+  background-color: var(--white);
 }

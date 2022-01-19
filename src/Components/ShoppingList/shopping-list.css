@@ -7,6 +7,8 @@
 }
 
 .shop-list-item {
+  display: flex;
+  justify-content: space-around;
   padding: 2rem 0 2rem 2rem;
   list-style: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.37);
@@ -24,6 +26,11 @@
   align-self: flex-end;
   margin-top: 3%;
   margin-right: 10%;
+}
+
+.delete-item-button {
+  padding: 0.3rem;
+  background-color: var(--white);
 }
 
 .bought-items-button {
