@@ -20,24 +20,15 @@
 .bought-item {
   display: flex;
   width: 100%;
-  padding: 2rem 0 2rem 0;
-  justify-content: space-around;
+  padding: 2rem;
+  justify-content: space-between;
   list-style: none;
   text-decoration:line-through rgba(0, 0, 0, 0.603);
   border-bottom: 1px solid rgba(0, 0, 0, 0.37);
 }
 
-.bought-item-properties {
-  flex-grow: 2;
-  margin-left: 2rem;
-}
-
 .bought-item-name {
   padding: 0 1rem 0 2rem;
-}
-
-.delete-item-container-completed {
-  flex-grow: 1;
 }
 
 .delete-item-button {
