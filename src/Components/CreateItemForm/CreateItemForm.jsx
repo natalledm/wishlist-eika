@@ -6,14 +6,16 @@ export default function CreateItemForm(props) {
   const submitItemHandler = e => {
     e.preventDefault();
     if (name.length === 0 || price === '') {
-      console.log("enter valid name and number")
+      setError(true);
     } else {
       props.createItem(name, price);
+      setError(false);
     }
     setName('');
     setPrice('');
   }
 
+  const [hasError, setError] = useState(false);
   const [name, setName] = useState('');
   const [price, setPrice] = useState('');
 
@@ -23,24 +25,29 @@ export default function CreateItemForm(props) {
 
 
   return (
-    <form className='create-item-form flex-column'>
-      <div>
-        <input
-          type='text'
-          placeholder='item name'
-          name='name'
-          value={name}
-          onChange={inputText}
-        />
-        <input
-          type='number'
-          placeholder='price'
-          name='price'
-          value={price}
-          onChange={inputPrice}
-        />
-        <button className='item-form-button' onClick={submitItemHandler}>Add item</button>
-      </div>
-    </form>
+    <>
+      <form className='create-item-form flex-column'>
+        <div>
+          <input
+            type='text'
+            placeholder='item name'
+            name='name'
+            value={name}
+            onChange={inputText}
+            required={true}
+          />
+          <input
+            type='number'
+            placeholder='price'
+            name='price'
+            value={price}
+            onChange={inputPrice}
+            required={true}
+          />
+          <button className='item-form-button' onClick={submitItemHandler}>Add item</button>
+        </div>
+      </form>
+      {hasError ? <p className='form-required'>Please fill in name and price</p> : null}
+    </>
   )
 }
