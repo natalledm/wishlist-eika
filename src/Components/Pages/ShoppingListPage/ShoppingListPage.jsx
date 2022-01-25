@@ -1,33 +1,46 @@
-import { useEffect, useState } from 'react';
-import CompletedList from '../../CompletedList/CompletedList';
-import CreateItemForm from '../../CreateItemForm/CreateItemForm';
-import ShoppingList from '../../ShoppingList/ShoppingList';
-import './shopping-list-page.css';
+import { useEffect, useState } from "react";
+import CompletedList from "../../CompletedList/CompletedList";
+import CreateItemForm from "../../CreateItemForm/CreateItemForm";
+import ShoppingList from "../../ShoppingList/ShoppingList";
+import "./shopping-list-page.css";
 
-
+/**
+ * Function length -1
+ * This component is too long,
+ * After closer inspection i see to many variables (const) and functions (const used as arrow functions)
+ * This can be broke down into smaller blocks of code to make it easier to handle
+ */
 export default function ShoppingListPage() {
-
   const initialItemsString = localStorage.getItem("items");
 
-  const initialItems = initialItemsString === null ? [] : JSON.parse(initialItemsString);
+  const initialItems =
+    initialItemsString === null ? [] : JSON.parse(initialItemsString);
 
   const [items, setItems] = useState(initialItems);
 
+  // Bad idea -3
+  // If we want to create a new id based on id's stored in sequence just use
+  // const newId = items.length + 1;
+
+  // If we want to get the latest id just use:
+  // const latestId = array[array.length];
   const highestId = (items) => {
     let maxId = 0;
+
+    // Old JS -1
+    // in the course we will explain and then use newer coding styles
     for (let i = 0; i < items.length; i++) {
       if (items[i].id > maxId) {
         maxId = items[i].id;
       }
     }
     return maxId;
-  }
+  };
 
   const [id, setId] = useState(highestId(initialItems) + 1);
 
-
   useEffect(() => {
-    localStorage.setItem('items', JSON.stringify(items))
+    localStorage.setItem("items", JSON.stringify(items));
   }, [items]);
 
   const createItem = (name, price) => {
@@ -42,7 +55,7 @@ export default function ShoppingListPage() {
   };
 
   const toggleCompleted = (itemToToggle) => {
-    const newItems = items.map(item => {
+    const newItems = items.map((item) => {
       if (item.id !== itemToToggle.id) {
         return item;
       }
@@ -56,7 +69,7 @@ export default function ShoppingListPage() {
     });
 
     setItems(newItems);
-  }
+  };
 
   const [isVisible, setVisibility] = useState(false);
 
@@ -75,15 +88,26 @@ export default function ShoppingListPage() {
       } else {
         return true;
       }
-    })
+    });
     setItems(newArr);
-  }
+  };
 
   return (
     <div className="flex-column list-container">
       <CreateItemForm createItem={createItem} />
-      <ShoppingList items={items.filter(item => !item.isCompleted)} toggle={toggleCompleted} visibility={changeVisibility} remove={removeFromList} />
-      {isVisible ? <CompletedList items={items.filter(item => item.isCompleted)} toggle={toggleCompleted} remove={removeFromList} /> : null}
+      <ShoppingList
+        items={items.filter((item) => !item.isCompleted)}
+        toggle={toggleCompleted}
+        visibility={changeVisibility}
+        remove={removeFromList}
+      />
+      {isVisible ? (
+        <CompletedList
+          items={items.filter((item) => item.isCompleted)}
+          toggle={toggleCompleted}
+          remove={removeFromList}
+        />
+      ) : null}
     </div>
   );
 }
